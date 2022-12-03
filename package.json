@@ -1,7 +1,7 @@
 {
 	"name": "set.prototype.union",
 	"version": "1.0.0",
-	"description": "An ESnext spec-compliant `Set.prototype.union` shim/polyfill/replacement that works as far down as ES3 (a Set polyfill may be needed)",
+	"description": "An ESnext spec-compliant `Set.prototype.union` shim/polyfill/replacement that works as far down as ES3",
 	"main": "index.js",
 	"exports": {
 		".": [
