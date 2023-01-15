@@ -14,46 +14,10 @@ var GetKeysIterator = require('./aos/GetKeysIterator');
 
 var isSet = require('is-set');
 
-var callBind = require('call-bind');
-var callBound = require('call-bind/callBound');
-var iterate = require('iterate-value');
-
-var $nativeSetForEach = callBound('Set.prototype.forEach', true);
-var $polyfillSetForEach = $Set.prototype.forEach && callBind($Set.prototype.forEach);
-var $setForEach = function (set, callback) {
-	if ($nativeSetForEach) {
-		try {
-			return $nativeSetForEach(set, callback);
-		} catch (e) { /**/ }
-	}
-	if ($polyfillSetForEach) {
-		return $polyfillSetForEach(set, callback);
-	}
-	iterate(set, callback);
-	return void undefined;
-};
-
-var $nativeSetHas = callBound('Set.prototype.has', true);
-var $polyfillSetHas = $Set.prototype.has && callBind($Set.prototype.has);
-var $setHas = function (set, key) {
-	if ($nativeSetHas) {
-		try {
-			return $nativeSetHas(set, key);
-		} catch (e) { /**/ }
-	}
-	return $polyfillSetHas(set, key);
-};
-
-var $nativeSetAdd = callBound('Set.prototype.add', true);
-var $polyfillSetAdd = $Set.prototype.add && callBind($Set.prototype.add);
-var $setAdd = function (S, v) {
-	if ($nativeSetAdd) {
-		try {
-			return $nativeSetAdd(S, v);
-		} catch (e) { /**/ }
-	}
-	return $polyfillSetAdd(S, v);
-};
+var tools = require('es-set/tools');
+var $setForEach = tools.forEach;
+var $setHas = tools.has;
+var $setAdd = tools.add;
 
 module.exports = function union(other) {
 	var O = this; // step 1
