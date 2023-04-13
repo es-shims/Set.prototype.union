@@ -1,6 +1,7 @@
 'use strict';
 
 var $Set = require('es-set/polyfill')();
+var $Map = require('es-map/polyfill')();
 var forEach = require('for-each');
 var v = require('es-value-fixtures');
 var debug = require('object-inspect');
@@ -30,6 +31,17 @@ var setEqual = function compareSetLikes(t, actual, expected, msg) {
 };
 
 module.exports = function (union, t) {
+	var testUnion = function testSetUnion(ut, set1, set2, expected, msg) {
+		var result = union(set1, set2);
+		ut.ok(result instanceof $Set, 'returns a Set');
+		setEqual(
+			ut,
+			result,
+			new $Set(expected),
+			msg
+		);
+	};
+
 	t.test('throws on non-set receivers', function (st) {
 		forEach(v.primitives.concat(v.objects), function (nonSet) {
 			st['throws'](
@@ -149,28 +161,16 @@ module.exports = function (union, t) {
 
 	t.test('unions', function (st) {
 		var set1 = new $Set([1, 2, 3]);
-		var set2 = new $Set([4, 5, 6]);
-		var result = union(set1, set2);
+		testUnion(st, set1, set1, [1, 2, 3], 'returns the union of itself');
 
-		st.ok(result instanceof $Set, 'returns a Set');
-		setEqual(
-			st,
-			result,
-			new $Set([1, 2, 3, 4, 5, 6]),
-			'returns the union of the two sets'
-		);
+		var set2 = new $Set([4, 5, 6]);
+		testUnion(st, set1, set2, [1, 2, 3, 4, 5, 6], 'returns the union of the two sets');
 
 		var set3 = new $Set([1, 2, 3]);
-		var set4 = new $Set([3, 4, 5]);
-		var result2 = union(set3, set4);
+		testUnion(st, set1, set3, [1, 2, 3], 'returns the union of two similar sets');
 
-		st.ok(result2 instanceof $Set, 'returns a Set when sets have overlapping elements');
-		setEqual(
-			st,
-			result2,
-			new $Set([1, 2, 3, 4, 5]),
-			'returns the union of the two sets with overlapping elements'
-		);
+		var set4 = new $Set([3, 4, 5]);
+		testUnion(st, set3, set4, [1, 2, 3, 4, 5], 'returns the union of the two sets with overlapping elements');
 
 		var setLikeIter = {
 			has: has,
@@ -192,14 +192,18 @@ module.exports = function (union, t) {
 			size: 4
 		};
 
-		var result3 = union(set1, setLikeIter);
-		st.ok(result3 instanceof $Set, 'returns a Set when `other` is a Set-like with a manual iterator');
-		setEqual(
-			st,
-			result3,
-			new $Set([1, 2, 3, 0, 4, 6, 8]),
-			'returns the union of the two sets with a manual iterator'
-		);
+		testUnion(st, set1, setLikeIter, [1, 2, 3, 0, 4, 6, 8], 'returns the union of the two sets when `other` is a Set-like with a manual iterator');
+
+		st.end();
+	});
+
+	t.test('with a Map', { skip: typeof $Map !== 'function' }, function (st) {
+		var s1 = new $Set([1, 2]);
+		var m1 = new $Map([
+			[2, 'two'],
+			[3, 'three']
+		]);
+		testUnion(st, s1, m1, [1, 2, 3], 'returns the union of the two sets when `other` is a Map');
 
 		st.end();
 	});
