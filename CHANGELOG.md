@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.3](https://github.com/es-shims/Set.prototype.union/compare/v1.0.2...v1.0.3) - 2023-06-21
+
+### Commits
+
+- [Fix] use ES2023 implementation of `IteratorStep` [`eb67bab`](https://github.com/es-shims/Set.prototype.union/commit/eb67babd7ad461179331b23c33c15e5d39af5d0d)
+- [Tests] add passing tests [`b997840`](https://github.com/es-shims/Set.prototype.union/commit/b99784094a07ddbed10965e117bfca83a10f4a1c)
+- [Tests] add missing test file [`768791f`](https://github.com/es-shims/Set.prototype.union/commit/768791f781238bdfe871315b413b82ee9e22dff7)
+- [Dev Deps] update `@es-shims/api`, `@ljharb/eslint-config`, `es6-shim` [`2b45570`](https://github.com/es-shims/Set.prototype.union/commit/2b455701ed744cde8c685106ad521ce0d91dbb77)
+- [Deps] update `define-properties`, `es-abstract`, `get-intrinsic` [`8282b47`](https://github.com/es-shims/Set.prototype.union/commit/8282b474b9b70cf8a42e5463c2426168c44ac163)
+- [Dev Deps] update `@es-shims/api`, `tape` [`6e7c35c`](https://github.com/es-shims/Set.prototype.union/commit/6e7c35c04a3517d5fa0196376d3eb5c9d537cc9d)
+- [Deps] update `get-intrinsic` [`605cd00`](https://github.com/es-shims/Set.prototype.union/commit/605cd00567edba944f7a4da1db5764f6d5fdc135)
+- [Dev Deps] update `aud` [`e81245d`](https://github.com/es-shims/Set.prototype.union/commit/e81245d1ac18ceddd2ef2cfdf4f75dafa1f6747b)
+
 ## [v1.0.2](https://github.com/es-shims/Set.prototype.union/compare/v1.0.1...v1.0.2) - 2023-01-14
 
 ### Commits
