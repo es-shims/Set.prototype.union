@@ -26,6 +26,9 @@
 				"Call",
 				"Get",
 				"IsCallable",
+				// IteratorStep
+				"IteratorNext",
+				"IteratorComplete",
 			],
 		}],
 		"object-curly-newline": "off",

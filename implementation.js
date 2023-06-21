@@ -6,11 +6,10 @@ var $TypeError = GetIntrinsic('%TypeError%');
 
 var $Set = require('es-set/polyfill')();
 
-var IteratorStep = require('es-abstract/2022/IteratorStep');
-var IteratorValue = require('es-abstract/2022/IteratorValue');
-
-var GetSetRecord = require('./aos/GetSetRecord');
 var GetKeysIterator = require('./aos/GetKeysIterator');
+var GetSetRecord = require('./aos/GetSetRecord');
+var IteratorStep = require('./aos/IteratorStep');
+var IteratorValue = require('es-abstract/2022/IteratorValue');
 
 var isSet = require('is-set');
 
@@ -39,7 +38,7 @@ module.exports = function union(other) {
 
 	var next = true; // step 6
 	while (next) { // step 7
-		next = IteratorStep(keysIter['[[Iterator]]']); // step 7.a
+		next = IteratorStep(keysIter); // step 7.a
 		if (next) { // step 7.b
 			var nextValue = IteratorValue(next); // step 7.b.i
 			if (nextValue === 0) { // step 7.b.ii
