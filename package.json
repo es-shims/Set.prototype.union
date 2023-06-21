@@ -71,7 +71,7 @@
 	"devDependencies": {
 		"@es-shims/api": "^2.4.2",
 		"@ljharb/eslint-config": "^21.1.0",
-		"aud": "^2.0.2",
+		"aud": "^2.0.3",
 		"auto-changelog": "^2.4.0",
 		"es-map": "^1.0.4",
 		"es-value-fixtures": "^1.4.2",
