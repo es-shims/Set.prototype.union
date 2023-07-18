@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.1.0](https://github.com/es-shims/Set.prototype.union/compare/v1.0.3...v1.1.0) - 2023-07-18
+
+### Commits
+
+- [Deps] update `es-abstract` [`0d962d0`](https://github.com/es-shims/Set.prototype.union/commit/0d962d0a4f94f0a4d369d854cf97a800ecd2734b)
+- [patch] remove GetKeysIterator and its callable check [`4bf3ce8`](https://github.com/es-shims/Set.prototype.union/commit/4bf3ce8dcb4f2c6172c663cb1a636fedf6f6470c)
+- [patch] throw on negative set sizes [`09b9244`](https://github.com/es-shims/Set.prototype.union/commit/09b9244bda70f84f6b29570434efc1390d34324a)
+- [Dev Deps] update `tape` [`e16220c`](https://github.com/es-shims/Set.prototype.union/commit/e16220cca8ebeb89333faeab5a2a70d65bdc5224)
+
 ## [v1.0.3](https://github.com/es-shims/Set.prototype.union/compare/v1.0.2...v1.0.3) - 2023-06-21
 
 ### Commits
