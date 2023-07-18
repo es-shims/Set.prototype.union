@@ -6,7 +6,7 @@ var $TypeError = GetIntrinsic('%TypeError%');
 
 var $Set = require('es-set/polyfill')();
 
-var GetKeysIterator = require('./aos/GetKeysIterator');
+var GetIteratorFromMethod = require('./aos/GetIteratorFromMethod');
 var GetSetRecord = require('./aos/GetSetRecord');
 var IteratorStep = require('es-abstract/2023/IteratorStep');
 var IteratorValue = require('es-abstract/2023/IteratorValue');
@@ -28,7 +28,7 @@ module.exports = function union(other) {
 
 	var otherRec = GetSetRecord(other); // step 3
 
-	var keysIter = GetKeysIterator(otherRec); // step 4
+	var keysIter = GetIteratorFromMethod(otherRec['[[Set]]'], otherRec['[[Keys]]']); // step 4
 
 	// 5. Let resultSetData be a copy of O.[[SetData]]; // step 5
 	var result = new $Set();

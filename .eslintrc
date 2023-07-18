@@ -10,7 +10,7 @@
 				"RequireObjectCoercible",
 				"GetIntrinsic",
 				"GetSetRecord",
-				"GetKeysIterator",
+				"GetIteratorFromMethod",
 				"IteratorStep",
 				"IteratorValue",
 				"SetDataHas",
@@ -21,7 +21,6 @@
 				"Get",
 				"ToNumber",
 				"Type",
-				// GetKeysIterator
 				"Type",
 				"Call",
 				"Get",
