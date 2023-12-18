@@ -6,7 +6,9 @@ var forEach = require('for-each');
 var v = require('es-value-fixtures');
 var debug = require('object-inspect');
 
-var has = function () {}; // `union` needs `other` to have a `has`, even though it never uses it
+var has = function () {
+	throw new EvalError('`union` needs `other` to have a `has`, even though it never uses it');
+};
 
 var setEqual = function compareSetLikes(t, actual, expected, msg) {
 	t.test('setlikes: ' + msg, function (st) {
@@ -204,6 +206,56 @@ module.exports = function (union, t) {
 			[3, 'three']
 		]);
 		testUnion(st, s1, m1, [1, 2, 3], 'returns the union of the two sets when `other` is a Map');
+
+		st.end();
+	});
+
+	t.test('test262: test/built-ins/Set/prototype/union/combines-itself', function (st) {
+		var s1 = new $Set([1, 2]);
+		var expected = new $Set([1, 2]);
+		var combined = union(s1, s1);
+
+		st.deepEqual(combined, expected);
+		st.ok(combined instanceof $Set, 'returns a Set');
+		st.notEqual(combined, s1, 'The returned object is a new object');
+
+		st.end();
+	});
+
+	t.test('test262: test/built-ins/Set/prototype/union/combines-same-sets', function (st) {
+		var s1 = new $Set([1, 2]);
+		var s2 = new $Set([1, 2]);
+		var expected = new $Set([1, 2]);
+		var combined = union(s1, s2);
+
+		st.deepEqual(combined, expected);
+		st.ok(combined instanceof $Set, 'returns a Set');
+		st.notEqual(combined, s1, 'The returned object is a new object');
+		st.notEqual(combined, s2, 'The returned object is a new object');
+
+		st.end();
+	});
+
+	t.test('test262: test/built-ins/Set/prototype/union/result-order', function (st) {
+		var s1 = new $Set([1, 2]);
+		var s2 = new $Set([2, 3]);
+
+		st.deepEqual(union(s1, s2), new $Set([1, 2, 3]));
+
+		var s3 = new $Set([2, 3]);
+		var s4 = new $Set([1, 2]);
+
+		st.deepEqual(union(s3, s4), new $Set([2, 3, 1]));
+
+		var s5 = new $Set([1, 2]);
+		var s6 = new $Set([3]);
+
+		st.deepEqual(union(s5, s6), new $Set([1, 2, 3]));
+
+		var s7 = new $Set([3]);
+		var s8 = new $Set([1, 2]);
+
+		st.deepEqual(union(s7, s8), new $Set([3, 1, 2]));
 
 		st.end();
 	});
