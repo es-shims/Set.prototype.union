@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.1.1](https://github.com/es-shims/Set.prototype.union/compare/v1.1.0...v1.1.1) - 2024-02-04
+
+### Commits
+
+- [Tests] increase coverage [`7740390`](https://github.com/es-shims/Set.prototype.union/commit/7740390858d17d8317731bc2488a71225f530b10)
+- [Refactor] use `es-errors` where possible, so things that only need those do not need `get-intrinsic` [`73ed79e`](https://github.com/es-shims/Set.prototype.union/commit/73ed79ed99633f3e15001d262a715dfef3a25136)
+- [Deps] update `call-bind`, `define-properties`, `es-abstract`, `es-set`, `get-intrinsic` [`ea4a699`](https://github.com/es-shims/Set.prototype.union/commit/ea4a6993088d4e56ea0fc699d8eb19240c9311ae)
+- [Dev Deps] update `aud`, `es-map`, `npmignore`, `object-inspect`, `tape` [`8ab39da`](https://github.com/es-shims/Set.prototype.union/commit/8ab39dab1817226d0baa0ff30a60bc152e10a360)
+- [Dev Deps] update `tape` [`8c149f9`](https://github.com/es-shims/Set.prototype.union/commit/8c149f9608907fa9f31c7982f58707f7ae13d530)
+
 ## [v1.1.0](https://github.com/es-shims/Set.prototype.union/compare/v1.0.3...v1.1.0) - 2023-07-18
 
 ### Commits
