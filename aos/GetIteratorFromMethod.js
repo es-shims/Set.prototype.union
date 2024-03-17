@@ -2,9 +2,9 @@
 
 var $TypeError = require('es-errors/type');
 
-var Call = require('es-abstract/2023/Call');
-var Get = require('es-abstract/2023/Get');
-var Type = require('es-abstract/2023/Type');
+var Call = require('es-abstract/2024/Call');
+var Get = require('es-abstract/2024/Get');
+var Type = require('es-abstract/2024/Type');
 
 // https://tc39.es/ecma262/#sec-getiteratorfrommethod
 

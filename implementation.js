@@ -6,8 +6,8 @@ var $Set = require('es-set/polyfill')();
 
 var GetIteratorFromMethod = require('./aos/GetIteratorFromMethod');
 var GetSetRecord = require('./aos/GetSetRecord');
-var IteratorStep = require('es-abstract/2023/IteratorStep');
-var IteratorValue = require('es-abstract/2023/IteratorValue');
+var IteratorStep = require('es-abstract/2024/IteratorStep');
+var IteratorValue = require('es-abstract/2024/IteratorValue');
 
 var isSet = require('is-set');
 
