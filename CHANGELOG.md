@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.1.2](https://github.com/es-shims/Set.prototype.union/compare/v1.1.1...v1.1.2) - 2024-03-16
+
+### Commits
+
+- [Refactor] use `es-object-atoms`, update `es-abstract` [`35ac9d7`](https://github.com/es-shims/Set.prototype.union/commit/35ac9d739f9d5905cffff1f57046212a4135b3d8)
+- [Deps] update `call-bind`, `es-errors`, `get-intrinsic`, `is-set` [`31638f7`](https://github.com/es-shims/Set.prototype.union/commit/31638f76c2018e0311e02af12ee19cca45272693)
+- [Dev Deps] update `tape` [`4d5a98b`](https://github.com/es-shims/Set.prototype.union/commit/4d5a98ba6d01d08d40b1c433073ea6b9494c8089)
+
 ## [v1.1.1](https://github.com/es-shims/Set.prototype.union/compare/v1.1.0...v1.1.1) - 2024-02-04
 
 ### Commits
