@@ -6,8 +6,7 @@ var $Set = require('es-set/polyfill')();
 
 var GetIteratorFromMethod = require('./aos/GetIteratorFromMethod');
 var GetSetRecord = require('./aos/GetSetRecord');
-var IteratorStep = require('es-abstract/2024/IteratorStep');
-var IteratorValue = require('es-abstract/2024/IteratorValue');
+var IteratorStepValue = require('es-abstract/2024/IteratorStepValue');
 
 var isSet = require('is-set');
 
@@ -34,19 +33,18 @@ module.exports = function union(other) {
 		$setAdd(result, value);
 	});
 
-	var next = true; // step 6
-	while (next) { // step 7
-		next = IteratorStep(keysIter); // step 7.a
-		if (next) { // step 7.b
-			var nextValue = IteratorValue(next); // step 7.b.i
-			if (nextValue === 0) { // step 7.b.ii
-				nextValue = +0;
+	var next; // step 6
+	while (!keysIter['[[Done]]']) { // step 7
+		next = IteratorStepValue(keysIter); // step 7.a
+		if (!keysIter['[[Done]]']) { // step 7.b
+			if (next === 0) { // step 7.b.i
+				next = +0;
 			}
 
-			// if (!SetDataHas(resultSetData, nextValue)) { // step 7.b.iii
-			if (!$setHas(O, nextValue)) { // step 7.b.iii
-				// Append nextValue to resultSetData. // step 7.b.iii.1
-				$setAdd(result, nextValue);
+			// if (!SetDataHas(resultSetData, next)) { // step 7.b.ii
+			if (!$setHas(O, next)) { // step 7.b.ii
+				// Append next to resultSetData. // step 7.b.ii.1
+				$setAdd(result, next);
 			}
 		}
 	}

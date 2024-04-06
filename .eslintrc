@@ -11,8 +11,7 @@
 				"GetIntrinsic",
 				"GetSetRecord",
 				"GetIteratorFromMethod",
-				"IteratorStep",
-				"IteratorValue",
+				"IteratorStepValue",
 				"SetDataHas",
 
 				// GetSetRecord
