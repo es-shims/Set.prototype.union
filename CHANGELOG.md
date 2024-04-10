@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.1.3](https://github.com/es-shims/Set.prototype.union/compare/v1.1.2...v1.1.3) - 2024-04-10
+
+### Commits
+
+- [Refactor] remove useless ESM [`e8ba276`](https://github.com/es-shims/Set.prototype.union/commit/e8ba276a947b4a130712fd27ca7f7079bc30566b)
+- [Refactor] update spec from https://github.com/tc39/ecma262/pull/3306 [`1df378a`](https://github.com/es-shims/Set.prototype.union/commit/1df378a2df3503debbd40e2a6e8bf4d73af95d1e)
+- [Deps] update `es-abstract` [`0b87f4f`](https://github.com/es-shims/Set.prototype.union/commit/0b87f4f2a57d443c343312468a7b77d5162f7e82)
+- [Dev Deps] update `@es-shims/api` [`3879127`](https://github.com/es-shims/Set.prototype.union/commit/3879127fba276d4a534fc9e2b701712e79cfb212)
+
 ## [v1.1.2](https://github.com/es-shims/Set.prototype.union/compare/v1.1.1...v1.1.2) - 2024-03-16
 
 ### Commits
