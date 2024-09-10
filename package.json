@@ -23,7 +23,7 @@
 		"lint": "eslint --ext=js,mjs .",
 		"postlint": "es-shim-api --bound",
 		"test": "npm run tests-only",
-		"posttest": "aud --production",
+		"posttest": "npx npm@'>=10.2' audit --production",
 		"version": "auto-changelog && git add CHANGELOG.md",
 		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
 	},
@@ -65,7 +65,6 @@
 	"devDependencies": {
 		"@es-shims/api": "^2.5.0",
 		"@ljharb/eslint-config": "^21.1.0",
-		"aud": "^2.0.4",
 		"auto-changelog": "^2.4.0",
 		"es-map": "^1.0.5",
 		"es-value-fixtures": "^1.4.2",
