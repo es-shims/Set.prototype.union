@@ -25,7 +25,7 @@ module.exports = function union(other) {
 
 	var otherRec = GetSetRecord(other); // step 3
 
-	var keysIter = GetIteratorFromMethod(otherRec['[[Set]]'], otherRec['[[Keys]]']); // step 4
+	var keysIter = GetIteratorFromMethod(otherRec['[[SetObject]]'], otherRec['[[Keys]]']); // step 4
 
 	// 5. Let resultSetData be a copy of O.[[SetData]]; // step 5
 	var result = new $Set();
